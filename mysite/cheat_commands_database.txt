@@ -1,0 +1,8 @@
+Sqilte commands cheat:
+
+query_all = ModelName.objects.all()	(it will give me all the companies from the Database)
+query_item = ModelName.objects.get(attribute='Value') (it will give me just one company)
+
+Apple = Company.objects.get(pk=5)
+
+for company in Company.objects.all():
