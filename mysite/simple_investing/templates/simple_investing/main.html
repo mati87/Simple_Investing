@@ -1,0 +1,19 @@
+{% extends 'simple_investing/base.html' %}    
+{% block subtitle %} Welcome to Simple Investing {% endblock subtitle %}
+{%block content%}
+    <hr>
+    <br>
+    <p style = "font-style: normal">This website has the goal of assisting <strong><em>you</em></strong> in the process of making <strong><em>sound investment decisions</em></strong> in the <i>stock market</i>. In order to accomplish this goal we focus on:</p> 
+    <ul>
+        <li><p> Basic concepts that everyone should know before making an investment.</p></li>
+        <li><p> Providing the tools necessary to analyze the fundamentals of any public company. 
+    </ul>
+    <p>You will be able to create a portfolio of public companies that you are interested in. In order to do so, you will have to insert data available in the anual reports of each company.</p> 
+    <p> If you do not want to do the research, you have the option to access the data by entering the ticker <a href= 'https://www.investopedia.com/terms/s/stocksymbol.asp'>symbol</a> of the company you are interested in. Just press on the following <a href="{% url 'simple_investing:symbol'%}">link.</a></p>
+    <p>Weighing which option is better for you will depend on whether you trust a third party to run the numbers for you or if you are a do it yourself person.</p>    
+    <p>In order to get the data directly of each company we use Yahoo finance API.</p>
+    <p>Let's start by learning the main <a href ="http://127.0.0.1:8000/concepts">concepts.</a></p>
+    <p>If you already have a foundation on the matter, you can start by <a href = "{% url 'simple_investing:create_company' %}">adding</a> companies to your portfolio to evaluate them.</p>
+
+{% endblock content%}
+

@@ -1,0 +1,22 @@
+{% extends 'simple_investing/base.html' %}
+<br>
+<hr>
+<br>
+{% block content %}
+<p>Sign up and have access to our tools.</p>
+
+
+<form action= "" method="post">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    {% for field in form %}
+      <p>
+        {{ field.label }}
+        {{ field }}
+        {{ field.errors }}
+      </p>
+    {% endfor %}
+    <button type="submit" class="btn btn-success">Create User</button>
+  </form>
+
+{% endblock content %}

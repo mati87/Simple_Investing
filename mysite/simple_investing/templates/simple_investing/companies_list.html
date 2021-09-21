@@ -1,0 +1,15 @@
+{% extends 'simple_investing/base.html' %}
+{% block subtitle %}Companies that you are following{% endblock subtitle%}
+{% block content %}    
+    <hr>
+    {% if user.is_authenticated %}       
+        <p>If you want to learn the fundamentals of each company just click! otherwise <a href="{%url 'simple_investing:create_company'%}"> add</a>  a company to your portfolio!</p>
+    {% else %}
+        <p>In order to access your portfolio <a href = "/accounts/login/">login.</a></p>
+    {% endif %}    
+    {% for company in companies %} <!-- iterating over all of the companies in the database.-->
+        {% if company.user == user %} <!-- selecting the companies that a user has created.-->
+        <p><ul class="list-unstyled"><a href="{% url 'simple_investing:company_details' company.id %}" class="btn btn-outline-success"></button>{{company}}</a></p>
+        {% endif %}
+    {% endfor %}   
+{% endblock content %}

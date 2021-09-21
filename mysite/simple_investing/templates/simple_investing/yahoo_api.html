@@ -1,0 +1,27 @@
+{% extends 'simple_investing/base.html' %}
+{% block content %}
+{%if is_company == True %}
+    <h2 class = "display-6" style="text-align: center;">{{company.displayName}}'s fundamentals:</h2>    
+    <hr>
+    <br>
+    <br>
+    <ul class="list-group" style="width: max-content;">
+        <li class="list-group-item">Current market price: {{company.regularMarketPrice}}</l>
+        <li class="list-group-item">52 week high: {{company.fiftyTwoWeekHigh}}</li>
+        <li class="list-group-item">52 week high: {{company.fiftyTwoWeekLow}} </li>
+        <li class="list-group-item">Currency: {{company.currency}}</li>       
+        <li class="list-group-item">Market: {{company.market}}</li>        
+        <li class="list-group-item">Company Market Capitalization: {{company.marketCap}}</li>
+        <li class="list-group-item">Company outstanding shares: {{company.sharesOutstanding}}</li>
+        <li class="list-group-item">Current book value: {{company.bookValue}}</li>
+        <li class="list-group-item">Earnings per share for the year: {{company.epsCurrentYear}}</li>
+        <li class="list-group-item">Forward earnings per share: {{company.epsForward}}</li>
+        <li class="list-group-item">Trailing EPS, 12 months: {{company.epsTrailingTwelveMonths}}</li>
+    </ul>
+    <br>
+    <p style='text-align: center;'><a href= "{% url 'simple_investing:symbol' %}"  class="btn btn-outline-success">Look for another company </a></p>
+ {%else%}
+    <p>The ticker symbol you entered is incorrect. Double check the symbol and re-enter it.</p>
+    <p><a href= "{% url 'simple_investing:symbol' %}"  class="btn btn-outline-success">Tycker symbol </a></p></p> 
+{%endif%}
+ {%endblock content %}   

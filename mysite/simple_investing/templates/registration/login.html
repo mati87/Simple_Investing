@@ -1,0 +1,19 @@
+{% include 'main_config.html'%}
+
+{% for message in messages %}
+    <p>{{ message }}</p>
+        {% endfor %}
+<br>
+<form action= "" method='post'>
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    {% for field in form %}
+      <p>
+        {{ field.label }}
+        {{ field }}
+        {{ field.errors }}
+      </p>
+    {% endfor %}
+    <p>Don't have an account yet, <a href="{% url 'simple_investing:register'%}"> Create one!</a></p>       
+    <button type="submit" class="btn btn-success">Login User</button> 
+</form>

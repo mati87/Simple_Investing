@@ -1,0 +1,20 @@
+{% extends 'simple_investing/base.html' %}
+{% block subtitle %} Add a company to your portfolio {%endblock subtitle%}
+{% block content %}    
+    <hr>
+    {% if user.is_authenticated %}   
+        <p>In this section, you will be able to add a company to your portfolio and have access to its fundamentals.The goal is to assess if the <strong><i>stock market</i></strong> is offering us an investment opportunity. </p>
+        <p>Let's start by entering the data of the company that you are interested in: </p>        
+        <div class="row g-3">                  
+            <form action ="" method="post">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button type="submit" class="btn btn-success">Submit</button> 
+            </form>
+        </div>   
+    {% else %}
+        <p>In order to use our amazing tool <a href = "/accounts/login/">login here</a></p>
+    {% endif %}
+{% endblock content %}    
+
+

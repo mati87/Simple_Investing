@@ -1,0 +1,37 @@
+{% extends 'simple_investing/base.html' %}
+{% block subtitle %} Investing Concepts {% endblock subtitle %}
+{% block content %}
+    <hr>  
+    <p><font size="+1">What is <strong>investing?</strong></font></p>
+    <p>In the pursuit of simplicity, one can say that <strong><i>to invest</i></strong> is to allocate money with the expectation of a positive <i>return</i> (<strong>profit</strong>) in the future. To explore this concept further you can visit: <a href = https://en.wikipedia.org/wiki/Investment> Wikipedia</a> or <a href = https://www.investopedia.com/terms/i/investment.asp> Investopedia.</a></p>
+    <p>Taking into account the aforementioned definition, we can assume that there are different investing vehicles (<strong>assets or financial instruments</strong>) that one can choose.</p>
+    <p>In this website we will focus on investing in <strong>public businesses</strong> (commonly known as <strong>stocks</strong>).</p>    
+    <br>
+    <p><font size="+1">What is a <strong>stock?</strong></font> </p>
+    <p> A stock is all of the <i>shares</i> (<strong>fractions</strong>) into which ownership of a corporation (<strong><i>business</i></strong>) is divided into. In other words, one can say that<strong><i> by owning a stock, one owns a fraction of a business</i></strong>.</p>
+    <p>If we own a great business (<strong><i>stock</i></strong>) that generates handsome profits, the <strong><i>stock price</i></strong> will follow. Conversley, if we own a bad business (<strong>stock</strong>) that loses money, the stock price will follow accordingly.</p>
+    <p>In that regard, there are different <strong><i>investing metrics</i></strong> (investing metrics) that we can use to <strong><i>evaluate, meassure</i></strong> the fundamentals of any public business that caught our attention.</p>
+    <br>            
+    <p><font size="+1">What are the <strong>fundamentals</strong> of  business?</font> </p>
+    <p>The <i>fundamentals</i> are the intrinsic characteristics of the business. In simple words, its revenues, assets, liabilities, etc.</p>
+        
+    <p>There are different metrics we can use to analyze the fundamentals of any public company. These metrics are ratios. A ratio is relationship between two concepts.</p>  
+    <p>In this website, we will use some of the most conventional ones:</p>
+        
+    <ul>   
+        <li><p>Free cashflow. (FCF)<a href = https://www.investopedia.com/terms/f/freecashflow.asp class="btn btn-outline-success"></button> Keep learning!</a></p></li>
+        <li><p>Return on equity. (ROE)<a href = https://www.investopedia.com/terms/r/returnonequity.asp class="btn btn-outline-success"></button>Keep learning!</a></p></li>
+        <li><p>Price to earnings. (P/E)<a href = https://www.investopedia.com/terms/p/price-earningsratio.asp class="btn btn-outline-success"></button> Keep learning!</a></p></li>
+        <li><p>Debt to equity. (D/E)<a href = https://www.investopedia.com/terms/d/debtequityratio.asp class="btn btn-outline-success"></button> Keep learning!</a></p></li>
+        <li><p>Current Ratio.  (CR)<a href = https://www.investopedia.com/terms/c/currentratio.asp class="btn btn-outline-success"></button> Keep learning! </a></p></li>
+        <li><p>Price to sales.  (CR)<a href = https://www.investopedia.com/articles/fundamental/03/032603.asp class="btn btn-outline-success"></button> Keep learning! </a></p></li>
+        <li><p>Net Income. (NI) <a href = https://www.investopedia.com/terms/n/netincome.asp class="btn btn-outline-success"></button> Keep learning!</a></p></li>
+        <li><p>Share holders Equity. (Se) <a href = https://www.investopedia.com/terms/s/shareholdersequity.asp class="btn btn-outline-success"></button> Keep learning! </a></p></li>
+        <li><p>Market Capitalization. <a href = https://www.investopedia.com/terms/m/marketcapitalization.asp class="btn btn-outline-success"></button> Keep learning! </a></p></li>
+        <li><p>Book Value Per Share. (Bvps) <a href =https://www.investopedia.com/terms/b/bvps.asp class="btn btn-outline-success"></button> Keep learning! </a></p></li>
+        <li><p>Price To Book  <a href =https://www.investopedia.com/terms/p/price-to-bookratio.asp class="btn btn-outline-success"></button> Keep learning! </a></p></li>
+    </ul>
+    <br>
+    <p>Add companies to your portfolio to evaluate them <a href ="{% url 'simple_investing:create_company' %}" class="btn btn-success"></button>Click!</a></p>
+{% endblock content %}
+

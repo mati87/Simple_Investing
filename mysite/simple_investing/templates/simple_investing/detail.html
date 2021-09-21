@@ -1,0 +1,70 @@
+{% extends 'simple_investing/base.html' %}
+{% block content %}
+   {%if company.user == user%}    
+    <h2 class="company display-4" style="text-align: center;">{{company}}</h2>  
+    <hr>
+    <br>
+    <div>
+        <table class="table table-bordered">
+            <thead>
+                <tr class="table-success">
+                    <th>Outstanding Shares</th>
+                    <th>Share Price</th>
+                    <th>Revenue</th>
+                    <th>Expenses</th>
+                    <th>Total Liabilities</th>
+                    <th>Total Assets</th>
+                    <th>Current Assets</th>
+                    <th>Current Liabilities</th>
+                    <th>Operating Cashflows</th>
+                    <th>Capital Expenditure</th>                
+                </tr>
+            </thead>   
+            <tbody>
+                <tr>
+                    <td>{{company.outstanding_shares}}</td>
+                    <td>{{company.share_price}}</td>
+                    <td>{{company.revenue}}</td>
+                    <td>{{company.expenses}}</td>
+                    <td>{{company.total_liabilities}}</td>
+                    <td>{{company.total_assets}}</td>
+                    <td>{{company.current_assets}}</td>
+                    <td>{{company.current_liabilities}}</td>
+                    <td>{{company.operating_cashflows}}</td>
+                    <td>{{company.capex}}</td>
+                                       
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p>According to the information you enter, these are the fundamentals of {{company}}:</p>
+    <p>
+        <ul class="list-group" style="width: max-content;">
+            <li class="list-group-item">Net income: <b>{{company.net_income}}</b></li>
+            <li class="list-group-item">Net assets/Shareholders equity: <b>{{company.net_assets}}</b></li>
+            <li class="list-group-item">Return on equity: <b>{{company.return_on_equity}}</b></li>
+            <li class="list-group-item">Price to earnings: <b>{{company.price_to_earnings}}</b></li>
+            <li class="list-group-item">Debt to equity: <b>{{company.debt_to_equity}}</b></li>
+            <li class="list-group-item">Current Ratio: <b>{{company.current_ratio}}</b></li>
+            <li class="list-group-item">Free cashflow: <b>{{company.current_ratio}}</b></li> 
+            <li class="list-group-item">Market Capitalization:<b>{{company.market_cap}}</b></li>
+            <li class="list-group-item">Price to sales: <b>{{company.price_to_sales}}</b></li>
+            <li class="list-group-item">Book Value Per Share: <b>{{company.book_value_per_share}}</b></li>
+            <li class="list-group-item">Price to book: <b>{{company.price_to_book}}</b></li>
+        </ul>   
+    </p>  
+    <p><a href= "{% url 'simple_investing:update_company' company.id %}" class="btn btn-outline-success"></button>Update</a></p>    
+    <p><a href ="{% url 'simple_investing:symbol'%}" class="btn btn-outline-success"></button> Compare results with Yahoo</a></p>
+    <p><a href='http://127.0.0.1:8000/concepts' class="btn btn-outline-success"></button> Revise concepts </a></p>
+    <a href= "{% url 'simple_investing:delete_company' company.id%}" class="btn btn-outline-danger"></button> Delete</a></p> 
+    
+    <p>If price to earnings is below 15 and price to book is less than 1.5, it could represent a good buying opportunity. 
+    <p>Return on equity is consider to be good when it's above 15 points and when it has been increasing overtime.</p>
+    <p> Free cashflow is an important metric, the higher the number the better.</p>
+    <p>Bare in mind that ratio results differ with each industry.</p>
+    <p>Remember that these numbers are providing past information, as investors we try to read into the future and see what the numbers will be like in 2, 3, 10 years from now.</p>    
+    {%else%}
+        <p>You don't have acces to this page, you can go back to your <a href ="{% url 'simple_investing:companies_list' %}">porfolio</a></p>
+
+    {%endif%}
+{% endblock content %}

@@ -1,0 +1,18 @@
+{% extends 'simple_investing/base.html' %}
+{% block subtitle %} Tycker Symbol {% endblock subtitle %}
+{% block content %}    
+    <hr>
+    <p>In this section you will be able to look up for any public traded company using its stock symbol. Once you find it, submit it and get all the important data.</p>
+    <br>
+    {% if user.is_authenticated %}
+        <p>If you wish to do the research yourself and insert the data just gather <a href="{% url 'simple_investing:create_company' %}">click.</a></p>    
+        <form action="/symbol/" method="post">
+            {% csrf_token %}
+            {{form.as_p}}       
+         <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+    {% else %}
+        <p>In order to use our amazing tool <a href = "/accounts/login/">login here</a></p>
+    {% endif %}
+{%endblock content %}  
+
