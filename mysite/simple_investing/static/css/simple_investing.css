@@ -1,0 +1,36 @@
+.navbar {      
+        background-color:#0de399;
+}
+.nav-link {
+        color:#f8f8f8 !important;
+}
+      
+a  { 
+    color: #0de35f;
+    text-decoration: none;    
+ }
+
+.company { 
+        margin-left: 15px;  
+}
+
+.logo-container img {
+        height: 250px;        
+        width: 250px;
+        float: right;
+        margin-right: 15px ; 
+        position:relative ;
+        top:-15px ; 
+
+        
+}
+#content { 
+        margin-left: 10px ;
+
+}
+
+#subtitle {
+        margin-left: 10px;
+        
+
+}
